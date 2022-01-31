@@ -1,0 +1,27 @@
+<h2>Create product</h2>
+
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">Product</span>
+  <input #product type="text" class="form-control" placeholder="Product" aria-label="Product" aria-describedby="basic-addon1">
+</div>
+
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">Category</span>
+  <input #author type="text" class="form-control" placeholder="Category" aria-label="Category" aria-describedby="basic-addon1">
+</div>
+
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">Price</span>
+  <input #author type="text" class="form-control" placeholder="Price" aria-label="Price" aria-describedby="basic-addon1">
+</div>
+
+<button (click)="create(product.value, author.value)" type="button" class="btn btn-primary">Submit</button>
+<h1>products</h1>
+<ul>
+  <li *ngFor="let product of products | async">
+    "{{ product.product }}", {{ product.author }}
+    <button (click)="delete(product._id)">Delete</button>
+    
+
+  </li>
+</ul>
