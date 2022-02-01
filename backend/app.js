@@ -31,8 +31,8 @@ app.use(
 )
 
 // app.listen(4000, () => console.log('Server on por 4000'));
-console.log("clave " +password)
-const URI = `mongodb+srv://juan:yordyaquiles07@cluster0.ppt3d.mongodb.net/principal?retryWrites=true&w=majority`
+
+const URI = `mongodb+srv://${user}:${password}@cluster0.ppt3d.mongodb.net/principal?retryWrites=true&w=majority`
 mongoose.connect(
     URI,{
         useUnifiedTopology: true, 
