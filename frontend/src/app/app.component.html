@@ -1,4 +1,9 @@
+
+<br>
 <h2>Create product</h2>
+
+
+<div style="width:80%; margin-left: 15px;">
 
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Product</span>
@@ -16,12 +21,35 @@
 </div>
 
 <button (click)="create(product.value, author.value)" type="button" class="btn btn-primary">Submit</button>
+</div>
+<br><br>
 <h1>products</h1>
-<ul>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Product</th>
+      <th scope="col">Category</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let product of products | async">
+   
+    <tr>
+      <th scope="row">{{ product._id }}</th>
+      <td>{{ product.product }}</td>
+      <td>{{product.author}}</td>
+      <td><button type="button" class="btn btn-danger" (click)="delete(product._id)">Delete</button></td>
+    </tr>
+ 
+  </tbody>
+</table>
+<!-- <ul>
   <li *ngFor="let product of products | async">
     "{{ product.product }}", {{ product.author }}
     <button (click)="delete(product._id)">Delete</button>
     
 
   </li>
-</ul>
+</ul> -->
